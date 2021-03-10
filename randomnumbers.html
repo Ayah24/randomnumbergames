@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>randomnumber</title>
+    <style></style>
+    <link rel="stylesheet" href="css\randomnumbers.css">
+</head>
+<body>
+    
+    <h1> Random Number Game </h1>
+<div class="form">
+    <form action="act">
+<label><h2>Enter a Number 0-100 :</h2></label>
+<input type="text" id="guessfield">
+<input type="submit" id="submitguess">
+<button>Reset</button>
+<h1 id=""></h1>
+</div>
+<h3>attempts :<span id="score"></span></h3>
+<h3>Scoreboard :<span id="score"></span></h3>
+</form>
+</div>
+
+<script>
+var randomnumber = math.floor(math.random()* 100);
+var attempts = 0;
+var submit = document.getElementById("submitguess");
+var bodycolor = document.querySelector("body");
+var results = document.getElementById("results");
+
+submit.addEventListener("click", function() {
+var elements = document.createElement("h1")
+var text = document.createTextNode("attempts: ")     
+var userguess = document.getElementById("guessfield").value;
+elements.appendChild(text) 
+if(userguess == randomnumber){
+    results.appendChild(elements)
+}
+if(userguess > randomnumber){
+    userguess.innerHTML = document.write("Guess Lower ")
+    bodycolor.style.backgroundColor("blue")
+}
+if(userguess < randomnumber){
+    userguess.innerHTML = document.write("Guess Higher ")
+}
+console.log(userguess);
+});
+
+</script>
+</body>
+</html>
